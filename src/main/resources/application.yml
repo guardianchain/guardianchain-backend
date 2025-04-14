@@ -1,0 +1,33 @@
+blockchain:
+  authorization: dTB3ZXFidXF1ODpKS0dKbUxUN292dl9vbDZ0ZXFsZndVM01ydXVGU2FXOFB4RTMtckxmOVBv
+  signer: gc_user
+  channel: default-channel
+  chaincode: erc1155
+
+
+jwt:
+  secret: 9a4f2c8d3b7a1e6f45c8a0b3f267d8b1d4e6f3c8a9d2b5f8e3a9c6b5d2e8f1a
+  expiration: 86400000
+
+spring:
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: https://onehrc-access-dev.hrclabs.io/realms/Paas
+#          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+  datasource:
+    url: jdbc:postgresql://localhost:5432/guardianchain
+    username: admin
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
